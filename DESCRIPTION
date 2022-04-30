@@ -3,7 +3,7 @@ Title: Statistical Modeling Tools
 Version: 0.0.1
 Authors@R: person(given = "Jiacheng", family = "Zhao", email = "zhaojiacheng@mail.bnu.edu.cn", role = c("aut", "cre"))
 Maintainer: Jiacheng Zhao <zhaojiacheng@mail.bnu.edu.cn>
-Description: smot provides users with statistical modeling utilities.
+Description: smot provides users with statistical modeling tools.
 License: GPL (>= 3)
 Imports: graphics, methods, grDevices, stats
 Encoding: UTF-8
