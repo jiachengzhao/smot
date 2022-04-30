@@ -13,21 +13,19 @@
 #' @param at2.labels y-tick-labels.
 #' @param at3.labels sec.x-tick-labels.
 #' @param at4.labels sec.y-tick-labels.
-#' @param mgp1 mgp for x axex, same as mgp() in par() in base r.
-#' @param mgp2 mgp for y axex, same as mgp() in par() in base r.
-#' @param lwd.axis lwd.axis axis line width.
-#' @param lwd.tick lwd.tick tick line width.
-#' @param col.axis axis color.
+#' @param mgp1 mgp for x axex, same as mgp in par() in base r.
+#' @param mgp2 mgp for y axex, same as mgp in par() in base r.
+#' @param lwd.axis axis line width.
 #' @param bg background color.
 #' @param ... other graphical parameters to be passed.
-#'
-#' @export
 #'
 #' @examples
 #' splot(cars)
 #'
 #' @import graphics
 #' @import methods
+
+#' @export
 
 splot = function(
     data = NULL,
@@ -36,14 +34,15 @@ splot = function(
     at1 = NULL, at2 = NULL, at3 = NULL, at4 = NULL,
     at1.labels = NULL, at2.labels = NULL, at3.labels = NULL, at4.labels = NULL,
     mgp1 = c(3, 0.1, 0), mgp2 = c(3, 0.2, 0),
-    lwd.axis = 0.1, lwd.tick = 0.5,
-    col.axis = 'black',
+    lwd.axis = 0.1,
     bg = NULL,
     ...
 ) {
+  olas = par()$las
+  otck = par()$tck
+
   # par ----
   par(las = 1, tck = 0.015)
-
 
   # null data ----
   if (is.null(data)) {
@@ -58,7 +57,6 @@ splot = function(
     )
   }
 
-
   # with data ----
   if (hasArg(data)) {
     if (length(colnames(data)) > 2) stop('data has more than two columns.\n')
@@ -69,15 +67,13 @@ splot = function(
     )
   }
 
-
   # axis ----
   # axis 1
   graphics::axis(
     1,
     at = at1,
     labels = at1.labels,
-    lwd = lwd.axis, lwd.tick = lwd.tick,
-    col = col.axis,
+    lwd = lwd.axis,
     mgp = mgp1
   )
   # axis 2
@@ -85,8 +81,7 @@ splot = function(
     2,
     at = at2,
     labels = at2.labels,
-    lwd = lwd.axis, lwd.tick = lwd.tick,
-    col = col.axis,
+    lwd = lwd.axis,
     mgp = mgp2
   )
   # axis 3
@@ -95,8 +90,7 @@ splot = function(
       3,
       at = at3,
       labels = at3.labels,
-      lwd = lwd.axis, lwd.tick = lwd.tick,
-      col = col.axis,
+      lwd = lwd.axis,
       mgp = mgp1
     )
   }
@@ -106,17 +100,17 @@ splot = function(
       4,
       at = at4,
       labels = at4.labels,
-      lwd = lwd.axis, lwd.tick = lwd.tick,
-      col = col.axis,
+      lwd = lwd.axis,
       mgp = mgp2
     )
   }
 
-
   # background ----
   if (!is.null(bg)) rect(par('usr')[1], par('usr')[3], par('usr')[2], par('usr')[4], col = bg)
 
-
   # boundary ----
-  box(lwd = lwd.axis, col = col.axis)
+  box(lwd = lwd.axis)
+
+  # re-par ----
+  par(las = olas, tck = otck)
 }
