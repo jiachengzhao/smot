@@ -1,11 +1,11 @@
 Package: smot
 Title: Statistical Modeling Tools
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person(given = "Jiacheng", family = "Zhao", email = "zhaojiacheng@mail.bnu.edu.cn", role = c("aut", "cre"))
 Maintainer: Jiacheng Zhao <zhaojiacheng@mail.bnu.edu.cn>
 Description: smot provides users with statistical modeling utilities.
 License: GPL (>= 3)
-Imports: graphics, methods
+Imports: graphics, methods, grDevices, stats
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
