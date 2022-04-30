@@ -20,8 +20,6 @@ splot(
   mgp1 = c(3, 0.1, 0),
   mgp2 = c(3, 0.2, 0),
   lwd.axis = 0.1,
-  lwd.tick = 0.5,
-  col.axis = "black",
   bg = NULL,
   ...
 )
@@ -51,15 +49,11 @@ splot(
 
 \item{at4.labels}{sec.y-tick-labels.}
 
-\item{mgp1}{mgp for x axex, same as mgp() in par() in base r.}
+\item{mgp1}{mgp for x axex, same as mgp in par() in base r.}
 
-\item{mgp2}{mgp for y axex, same as mgp() in par() in base r.}
+\item{mgp2}{mgp for y axex, same as mgp in par() in base r.}
 
-\item{lwd.axis}{lwd.axis axis line width.}
-
-\item{lwd.tick}{lwd.tick tick line width.}
-
-\item{col.axis}{axis color.}
+\item{lwd.axis}{axis line width.}
 
 \item{bg}{background color.}
 
