@@ -12,10 +12,10 @@ bias(obs, pred)
 \item{pred}{vector of prediction.}
 }
 \value{
-A data.frame containing r-square, bias and RMSE.
+A data.frame containing r2, bias and RMSE.
 }
 \description{
-\code{bias} computes r-square, bias and root mean square error (RMSE) given a vector of observation and prediction.
+\code{bias} computes r-squared (r2), bias and root mean square error (RMSE) given a vector of observation and prediction.
 }
 \examples{
 bias(1:10, 1:10 + rnorm(10))
