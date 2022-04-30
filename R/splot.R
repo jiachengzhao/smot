@@ -1,7 +1,7 @@
 #' X-Y Plotting
 #'
 #' \code{splot} handels generic 2-d plotting.
-#' @param data a two-column *data.frame* or *data.table* with x variable in the first column and y variable in the second.
+#' @param data a two-column data.frame or data.table with x variable in the first column and y variable in the second.
 #' @param axis.style axis style, can be one of "i" (default) or "r".
 #' @param sec.x logical. If TRUE the axis on the top would be added.
 #' @param sec.y logical. If TRUE the axis on the right would be added.
@@ -13,8 +13,8 @@
 #' @param at2.labels y-tick-labels.
 #' @param at3.labels sec.x-tick-labels.
 #' @param at4.labels sec.y-tick-labels.
-#' @param mgp1 mgp for x axex, same as mgp in par() in base r.
-#' @param mgp2 mgp for y axex, same as mgp in par() in base r.
+#' @param mgp1 mgp for x axis, same as the mgp in \code{\link{par}}.
+#' @param mgp2 mgp for y axis, same as the mgp in \code{\link{par}}.
 #' @param lwd.axis axis line width.
 #' @param bg background color.
 #' @param ... other graphical parameters to be passed.
