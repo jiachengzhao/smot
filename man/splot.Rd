@@ -25,7 +25,7 @@ splot(
 )
 }
 \arguments{
-\item{data}{a two-column \emph{data.frame} or \emph{data.table} with x variable in the first column and y variable in the second.}
+\item{data}{a two-column data.frame or data.table with x variable in the first column and y variable in the second.}
 
 \item{axis.style}{axis style, can be one of "i" (default) or "r".}
 
@@ -49,9 +49,9 @@ splot(
 
 \item{at4.labels}{sec.y-tick-labels.}
 
-\item{mgp1}{mgp for x axex, same as mgp in par() in base r.}
+\item{mgp1}{mgp for x axis, same as the mgp in \code{\link{par}}.}
 
-\item{mgp2}{mgp for y axex, same as mgp in par() in base r.}
+\item{mgp2}{mgp for y axis, same as the mgp in \code{\link{par}}.}
 
 \item{lwd.axis}{axis line width.}
 
