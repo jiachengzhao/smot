@@ -1,10 +1,10 @@
 #' Bias
 #'
-#' \code{bias} computes r-square, bias and root mean square error (RMSE) given a vector of observation and prediction.
+#' \code{bias} computes r-squared (r2), bias and root mean square error (RMSE) given a vector of observation and prediction.
 #' @param obs vector of observation.
 #' @param pred vector of prediction.
 #'
-#' @return A data.frame containing r-square, bias and RMSE.
+#' @return A data.frame containing r2, bias and RMSE.
 #' @export
 #'
 #' @examples
