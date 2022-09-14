@@ -18,8 +18,6 @@
 #'
 
 nc_to_tif = function(path_from, path_to, epsg = 4326) {
-  # require(ncdf4)
-  # require(raster)
   setwd(path_from)
   f = list.files(pattern = '*.nc')
   k = 1
@@ -31,10 +29,10 @@ nc_to_tif = function(path_from, path_to, epsg = 4326) {
     value = ncvar_get(nc, names(nc$var)[3])
     for (j in 1:dim(value)[3]) {
       r = raster(t(value[, , j]), xmn = min(lon), xmx = max(lon), ymn = min(lat), ymx = max(lat))
-      crs(r) = paste0('EPSG:', epsg)
+      raster::crs(r) = paste0('EPSG:', epsg)
       r = flip(r, direction = 'y')
       r.name = paste0(file_path_sans_ext(f[i]), '_', gsub("\\.", "_", names(b)[j]), '.tif')
-      writeRaster(r, paste0(path_to, '/', r.name), overwrite = T)
+      writeRaster(r, paste0(path_to, '/', r.name), overwrite = TRUE)
       total = dim(value)[3] * length(f)
       cat(k, 'of', total, 'nc files processed!\n')
       k = k + 1
