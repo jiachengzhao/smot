@@ -31,7 +31,7 @@ nc_to_tif = function(path_from, path_to, epsg = 4326) {
       r = raster(t(value[, , j]), xmn = min(lon), xmx = max(lon), ymn = min(lat), ymx = max(lat))
       raster::crs(r) = paste0('EPSG:', epsg)
       r = flip(r, direction = 'y')
-      r.name = paste0(file_path_sans_ext(f[i]), '_', gsub("\\.", "_", names(b)[j]), '.tif')
+      r.name = paste0(gsub("\\.", "_", paste0(file_path_sans_ext(f[i]), '_', names(b)[j])), '.tif')
       writeRaster(r, paste0(path_to, '/', r.name), overwrite = TRUE)
       total = dim(value)[3] * length(f)
       cat(k, 'of', total, 'nc files processed!\n')
