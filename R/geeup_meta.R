@@ -9,7 +9,7 @@
 #'
 #' @param nc_path the path that stores the nc files.
 #' @param tif_path the path that stores the tif files.
-#' @param ori date origin.
+#' @param ori date origin (e.g., '2000-01-01').
 #'
 #' @examples
 #' ### not run
